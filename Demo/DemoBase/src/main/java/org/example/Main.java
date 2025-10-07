@@ -1,11 +1,12 @@
 package org.example;
 
 import java.util.*;
+import java.util.stream.IntStream;
 
 
 public class Main {
     public static void main(String[] args) {
-
+        test();
 
     }
 
@@ -47,6 +48,10 @@ public class Main {
         if(o instanceof String string ){
             System.out.println(string);
         }
+    }
+
+    public static void test (){
+        IntStream.iterate(0, i -> i + 1).limit(5).forEach(System.out::println);
     }
 
 
