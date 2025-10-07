@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <mapping class="org.example.entity.product.Product"/>
+        <mapping class="org.example.entity.Sell"/>
+        <mapping class="org.example.entity.SellProduct"/>
+        <mapping class="org.example.entity.Customer"/>
+        <mapping class="org.example.entity.product.ProductCloth"/>
+        <mapping class="org.example.entity.product.ProductElectronic"/>
+        <mapping class="org.example.entity.product.ProductFood"/>
+
+    </session-factory>
+</hibernate-configuration>
+
