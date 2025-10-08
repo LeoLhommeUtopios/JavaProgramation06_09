@@ -1,0 +1,50 @@
+{
+  "GET /api/comment" : {
+    "transaction" : "GET /api/comment",
+    "sampleCount" : 1500,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 202.6139999999996,
+    "medianResTime" : 167.5,
+    "minResTime" : 8.0,
+    "maxResTime" : 970.0,
+    "pct1ResTime" : 423.0,
+    "pct2ResTime" : 505.95000000000005,
+    "pct3ResTime" : 713.8900000000001,
+    "throughput" : 295.97474348855565,
+    "receivedKBytesPerSec" : 1746.3666017166536,
+    "sentKBytesPerSec" : 43.64471315114444
+  },
+  "POST /api/comment" : {
+    "transaction" : "POST /api/comment",
+    "sampleCount" : 150,
+    "errorCount" : 150,
+    "errorPct" : 100.0,
+    "meanResTime" : 32.406666666666666,
+    "medianResTime" : 9.0,
+    "minResTime" : 7.0,
+    "maxResTime" : 467.0,
+    "pct1ResTime" : 120.9,
+    "pct2ResTime" : 195.79999999999995,
+    "pct3ResTime" : 355.310000000002,
+    "throughput" : 5.112474437627812,
+    "receivedKBytesPerSec" : 1.3130671651329244,
+    "sentKBytesPerSec" : 1.7474277862985685
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 1650,
+    "errorCount" : 150,
+    "errorPct" : 9.090909,
+    "meanResTime" : 187.14060606060568,
+    "medianResTime" : 157.0,
+    "minResTime" : 7.0,
+    "maxResTime" : 970.0,
+    "pct1ResTime" : 412.0,
+    "pct2ResTime" : 499.0,
+    "pct3ResTime" : 701.98,
+    "throughput" : 56.237218813905926,
+    "receivedKBytesPerSec" : 302.96902958844584,
+    "sentKBytesPerSec" : 9.286330521472392
+  }
+}

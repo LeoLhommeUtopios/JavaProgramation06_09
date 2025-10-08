@@ -1,0 +1,47 @@
+version : "3.3"
+
+networks:
+  project:
+ 
+volumes:
+  mysql_data:
+
+services:
+  # Database
+  sql:
+    container_name: sql
+    image: mysql
+    restart: always
+    ports:
+      - "3307:3307"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: covoiturage_app
+      MYSQL_TCP_PORT: 3307
+    networks:
+      - project
+    volumes:
+      - $HOME/docker/volumes/mysql:/var/lib/mysql mysql
+      # - ./_database/script.sql:/docker-entrypoint-initdb.d/script.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 10
+
+  carride:
+    container_name: carRide
+    ports:
+      - 8082:8082
+    environment:
+      URL_DATABASE: jdbc:mysql://sql:3307/covoiturage_app 
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD: root
+      PORT_CARRIDE: 8082
+    networks:
+      - project
+    build:
+      context: ./carride
+      dockerfile: .dockerfile
+    depends_on:
+      sql:
+        condition: service_healthy
