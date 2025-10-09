@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.example";
+option java_outer_classname = "CustomerGrpcProto";
+
+import "google/protobuf/empty.proto";
+
+package customer;
+
+service CustomerGrpc {
+  rpc postCustomer (CustomerRequest) returns (CustomerResponse){}
+  rpc getAllCustomer (google.protobuf.Empty) returns (ListCustomer){}
+  rpc getCustomerById (CustomerId) returns (CustomerResponse){}
+  rpc deleteCustomer (CustomerId) returns (DeletionMessage){}
+}
+
+message CustomerRequest{
+  string firstname = 1 ;
+  string lastname = 2;
+  int64 birthDateTimeStamp = 3;
+}
+
+message CustomerResponse{
+  int64 id = 1;
+  string firstname = 2 ;
+  string lastname = 3;
+  int64 birthDateTimeStamp = 4;
+}
+
+message CustomerId {
+  int64 id = 1;
+}
+
+message DeletionMessage{
+  bool deletion = 1;
+}
+
+message ListCustomer {
+  repeated CustomerResponse listOfCustomer = 1;
+}
+
